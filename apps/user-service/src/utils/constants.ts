@@ -1,7 +1,3 @@
-export const MICRO_SERVICE_CLIENTS = {
-  USER_SERVICE: 'USER_SERVICE',
-};
-
 export const AUTH_PATTERNS = {
   REGISTER: 'user_register',
   LOGIN: 'user_login',
