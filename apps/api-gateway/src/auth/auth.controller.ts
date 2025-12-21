@@ -13,15 +13,18 @@ export class AuthController {
   ) {}
   @Post('login')
   async login(@Body() body: LoginDto) {
-    console.log(JSON.stringify(body));
-    return await firstValueFrom(
+    console.log('☑️request from api gateway:', JSON.stringify(body));
+
+    const response = await firstValueFrom(
       this.authclient.send(AUTH_PATTERNS.LOGIN, body),
     );
+    console.log('☑️response from user service:', response);
+    return response;
   }
 
   @Post('register')
   async register(@Body() body: RegisterDto) {
-    console.log(JSON.stringify(body));
+    console.log('☑️request from api gateway:', JSON.stringify(body));
 
     return await firstValueFrom(
       this.authclient.send(AUTH_PATTERNS.REGISTER, body),
